@@ -38,7 +38,7 @@ export default function QRScreen() {
     useEffect(() => {
         //refresh qr code every minute
         const interval = setInterval(() => {
-            fetchQRCode();
+            refreshQRCode();
         }, 60002);
 
         return () => clearInterval(interval);

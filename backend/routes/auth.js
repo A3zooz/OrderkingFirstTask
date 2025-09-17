@@ -35,7 +35,7 @@ const signupValidation = [
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(400).json({
-                message: "Validation failed",
+                message: errors.array()[0].msg,
                 errors: errors.array().map(e => ({ field: e.param, message: e.msg })),
             });
         }
